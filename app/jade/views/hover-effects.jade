@@ -1,0 +1,12 @@
+//- hover-effects.jade
+extends ../template.jade
+block title
+  title gulp + jade + less + coffee
+
+block content
+  .container
+    .row
+      h1 Hi!
+      - for(var count=1; count <= 10; count++)
+        .col-lg-3.thumbnail-box
+          +thumbnail_hover('http://placehold.it/350x350', count)
