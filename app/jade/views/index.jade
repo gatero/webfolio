@@ -4,6 +4,270 @@ block title
   title gulp + jade + less + coffee
 
 block content
-  .container
-    .row
-      h1 Hi!
+  .container-fluid
+    section.row.home
+      article.col-lg-12
+        figure
+          h1.text-center.site-title Daniel Ortega
+        img.author-photo.img-circle.center(src="http://placehold.it/350x350", alt="Author picture")
+      .col-lg-12
+        +navbar
+    section.row.about-me
+      block about_me
+      // Descripcion del sitio en la parte izquierda
+      article.col-xs-12.col-sm-6.col-md-4.col-md-offset-2
+        // Titulo
+        blockquote
+          header: h1 DANIEL ORTEGA
+          footer: cite Inteligencia es la habilidad de adaptarse a los cambios.
+        // Texto
+        p.text-justify
+          | Me gusta formar parte de proyectos donde pueda poner a prueba mis conocimientos. Tomo muy en serio mi trabajo, me agrada trabajar en equipo pues siempre es bueno conocer y aportar ideas y experiencia.
+        p.text-justify
+          | Me especializo en el desarrollo de paginas y aplicaciones web, tengo mas de 6 años de experiencia y manejo las tecnologías mas nuevas para producir interfaces mas sencillas para los usuarios.
+        //- p.text-justify
+        //-   | La mejor forma de adquirir experiencia es perder miedo a cometer errores
+        div
+          span ---
+          ul.list-inline.social-links
+            li: a(href="#"): i.fa.fa-facebook
+            li: a(href="#"): i.fa.fa-twitter
+            li: a(href="#"): i.fa.fa-bitbucket
+            li: a(href="#"): i.fa.fa-github-alt
+            li: a(href="#"): i.fa.fa-linkedin
+      // Carrusel con thumbnails en la parte izquierda
+      article.col-xs-12.col-sm-6.col-md-4
+        #elements-carousel.carousel.slide.element-carousel(data-pause='hover' data-interval='5000')
+          //- Number of slides
+          - var total_items = 5
+
+          // Circulos del carrusel
+          ol.carousel-indicators
+            - var first_element = true
+            - for(var item = 0; item < total_items; item++)
+              li(class=first_element? 'active': '' data-target='#elements-carousel', data-slide-to='#{item}')
+              - first_element = false
+
+          // Contenido
+          .carousel-inner
+            .item.active
+              h3 Lenguajes:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-list
+                li: i.devicon-coffeescript-original
+                li: i.devicon-css3-plain
+                li: i.devicon-java-plain
+                li: i.devicon-javascript-plain
+                li: i.devicon-php-plain
+                li: i.devicon-python-plain
+                li: i.devicon-rails-plain
+                li: i.devicon-ruby-plain
+                li: i.devicon-html5-plain
+                li: i.fa.fa-terminal
+            .item
+              h3 Frameworks:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-list
+                li: i.devicon-grunt-plain
+                li: i.devicon-gulp-plain
+                li: i.devicon-angularjs-plain
+                li: i.devicon-bower-plain
+                li: i.devicon-css3-plain
+                li: i.devicon-jquery-plain
+                li: i.devicon-less-plain-wordmark
+                li: i.devicon-nodejs-plain
+                li: i.devicon-sass-original
+                li: i.devicon-wordpress-plain
+                li: i.devicon-zend-plain
+                li: i.devicon-foundation-plain
+                li: i.devicon-bootstrap-plain
+                li: i.fa.fa-flag
+            .item
+              h3 Compatibilidad:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-listv
+              ul.list-inline.icons-list
+                li: i.devicon-safari-plain
+                li: i.devicon-ie10-original
+                li: i.devicon-chrome-plain
+                li: i.devicon-firefox-plain
+              ul.list-inline.icons-list
+                li: i.fa.fa-mobile
+                li: i.fa.fa-tablet
+                li: i.fa.fa-laptop
+                li: i.fa.fa-desktop
+            .item
+              h3 Bases de datos:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-list
+                li: i.devicon-mongodb-plain
+                li: i.devicon-mysql-plain
+                li: i.devicon-oracle-plain
+            .item
+              h3 Control de versiones:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-list
+                li: i.devicon-git-plain
+                li: i.fa.fa-bitbucket
+                li: i.fa.fa-github-alt
+            .item
+              h3 Sistemas operativos:
+              p.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga culpa non ipsum aspernatur deserunt consectetur sit dolores doloribus corporis nisi.
+              ul.list-inline.icons-list
+                li: i.devicon-apple-original
+                li: i.fa.fa-windows
+                li: i.devicon-linux-plain
+                li: i.devicon-ubuntu-plain
+                li: i.fa.fa-terminal
+          // Controles
+          a.left.carousel-control(href='#elements-carousel', data-slide='prev')
+            i.fa.fa-chevron-left
+          a.right.carousel-control(href='#elements-carousel', data-slide='next')
+            i.fa.fa-chevron-right
+    section.row.expertise
+      .col-md-8.col-md-offset-2
+        blockquote
+          h1 Experiencia laboral
+          footer: cite Lugares en los que trabajé.
+        p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat deserunt quis quia ea autem asperiores vero nihil at, saepe beatae ex nemo cum, omnis repudiandae, quam provident reprehenderit quaerat modi consectetur fugiat ut. Labore necessitatibus ipsum quam a ad id atque enim, omnis inventore, asperiores fugiat natus sunt placeat quidem.
+      .col-md-8.col-md-offset-2
+        .row
+          .col-xs-12.col-sm-9.col-md-9
+            h3 Vinco Orbis
+            img.thumbnail.pull-left.margin-right(src="http://placehold.it/100" alt="Expertice image")
+            p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt laborum veritatis inventore sapiente facere dolores fuga laboriosam debitis nobis maxime, dolor id modi vero
+          .col-xs-12.col-sm-3.col-md-3.padding-top
+            .label.label-danger 12-12-2015 / 12-12-2015
+            address
+              strong Twitter, Inc.
+              abbr(title="Phone") Phone:
+              | (123) 456-7890
+            address
+              strong Full Name
+              br
+              a(href="mailto:#") daniel@gatero.mx
+        .row
+          .col-xs-12.col-sm-9.col-md-9
+            h3 Museo Nacional de Arte
+            img.thumbnail.pull-left.margin-right(src="http://placehold.it/100" alt="Expertice image")
+            p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt laborum veritatis inventore sapiente facere dolores fuga laboriosam debitis nobis maxime, dolor id modi vero
+          .col-xs-12.col-sm-3.col-md-3.padding-top
+            .label.label-danger 12-12-2015 / 12-12-2015
+            address
+              strong Twitter, Inc.
+              abbr(title="Phone") Phone:
+              | (123) 456-7890
+            address
+              strong Full Name
+              br
+              a(href="mailto:#") daniel@gatero.mx
+        .row
+          .col-xs-12.col-sm-9.col-md-9
+            h3 Museo Nacional de Bellas Artes
+            img.thumbnail.pull-left.margin-right(src="http://placehold.it/100" alt="Expertice image")
+            p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt laborum veritatis inventore sapiente facere dolores fuga laboriosam debitis nobis maxime, dolor id modi vero
+          .col-xs-12.col-sm-3.col-md-3.padding-top
+            .label.label-danger 12-12-2015 / 12-12-2015
+            address
+              strong Twitter, Inc.
+              abbr(title="Phone") Phone:
+              | (123) 456-7890
+            address
+              strong Full Name
+              br
+              a(href="mailto:#") daniel@gatero.mx
+        .row
+          .col-xs-12.col-sm-9.col-md-9
+            h3 Grupo Salinas
+            img.thumbnail.pull-left.margin-right(src="http://placehold.it/100" alt="Expertice image")
+            p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt laborum veritatis inventore sapiente facere dolores fuga laboriosam debitis nobis maxime, dolor id modi vero
+          .col-xs-12.col-sm-3.col-md-3.padding-top
+            .label.label-danger 12-12-2015 / 12-12-2015
+            address
+              strong Twitter, Inc.
+              abbr(title="Phone") Phone:
+              | (123) 456-7890
+            address
+              strong Full Name
+              br
+              a(href="mailto:#") daniel@gatero.mx
+    section.row.portafolio
+      .col-md-8.col-md-offset-2
+        h1
+          | Lorem ipsum dolor sit amet.
+        p.text-justify Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facilis, reprehenderit assumenda excepturi vero eligendi facere adipisci ut rerum temporibus ab itaque porro iusto culpa dolores illo magnam voluptatibus possimus illum soluta, nulla saepe aperiam sequi, ipsa! Maiores, sed tenetur?
+      .col-md-12.text-center
+        ul.list-inline
+          li: button(type="button").btn.btn-default.btn-sm.text-capitalize: i.fa.fa-globe &nbsp;websites
+          li: button(type="button").btn.btn-default.btn-sm.text-capitalize: i.fa.fa-building &nbsp;empresas
+          li: button(type="button").btn.btn-default.btn-sm.text-capitalize: i.fa.fa-sitemap &nbsp;proyectos
+      .col-md-8.col-md-offset-2.isotope-grid
+        .row
+          - for(var x = 0; x < 8; x++)
+            .col-xs-6.col-sm-3.col-md-3.isotope-item
+              img.thumbnail.img-responsive(src='http://placehold.it/200')
+    section.row.contact
+      .col-sm-12.col-md-8.col-md-offset-2
+        h1.text-uppercase
+          | ¿ Tienes algún comentario o pregunta ?
+        p.text-justify
+          | Puedes ponerte en contacto conmigo por medio de redes sociales o por medio del formulario de contacto, procura poner un correo para poder ponerme en contacto contigo, cuaquier duda o sugerencia es bienvenida.
+        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240864.0847430341!2d-99.14361259999998!3d19.390733650000012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad+de+M%C3%A9xico%2C+D.F.!5e0!3m2!1ses-419!2smx!4v1434847474112" width="100%" height="200" frameborder="0" style="border:0")
+      .col-xs-12.col-sm-6.col-md-4.col-md-offset-2
+        h5.text-uppercase
+          i.fa.fa-fw.fa-envelope-square
+          |&nbsp;Información de contacto
+        address
+          abbr(title='Ubicación')&nbsp;
+            i.fa.fa-fw.fa-map-marker
+            strong &nbsp;México, México.
+          br
+          abbr(title='Número teléfonico personal')&nbsp;
+            i.fa.fa-fw.fa-mobile
+            | &nbsp;Teléfono:&nbsp;
+          | (55) 2505-3297
+          br
+          abbr(title='Correo electrónico personal')&nbsp;
+            i.fa.fa-fw.fa-envelope-o
+            | &nbsp;Email:&nbsp;
+          a(href='mailto:yo@daniel-ortega.mx') yo@daniel-ortega.mx
+        h5.text-uppercase
+          i.fa.fa-fw.fa-share-alt
+          |&nbsp;Mis redes
+        ul.list-inline.social-links
+          li: a(href='#'): i.fa.fa-fw.fa-facebook
+          li: a(href='#'): i.fa.fa-fw.fa-twitter
+          li: a(href='#'): i.fa.fa-fw.fa-bitbucket
+          li: a(href='#'): i.fa.fa-fw.fa-github-alt
+          li: a(href='#'): i.fa.fa-fw.fa-linkedin
+      .col-xs-12.col-sm-6.col-md-4
+            h4.text-uppercase
+              i.fa.fa-fw.fa-paper-plane
+              |&nbsp;Envíame un mensaje
+            form(action='' method='POST')
+              .form-group
+                label(for='nombre')
+                  i.fa.fa-fw.fa-user &nbsp;
+                  | Tu nombre
+                input.form-control.input-sm#nombre(type='text' name='nombre' placeholder='Nombre')
+              .form-group
+                label(for='correo')
+                  i.fa.fa-fw.fa-envelope-o &nbsp;
+                  | Correo electrónico
+                input.form-control.input-sm#correo(type='email' name='email' placeholder='Coreo electrónico')
+              .form-group
+                label(for='mensaje')
+                  i.fa.fa-fw.fa-comment-o &nbsp;
+                  | Mensaje
+                textarea.form-control.input-sm#mensaje(name='mensaje', cols='30', rows='4' placeholder='Mensaje')
+              .form-group
+                button.btn.btn-primary.pull-right(type='submit')
+                  |&nbsp;Enviar
+                  i.fa.fa-fw.fa-caret-square-o-right
+
