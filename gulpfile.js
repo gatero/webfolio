@@ -61,7 +61,7 @@ gulp.task('usemin', function () {
 
 gulp.task('bower', function () {
   gulp
-    .src(config.app+'/jade/layout.jade')
+    .src(config.app+'/jade/template.jade')
     .pipe(
       wiredep({
         exclude: 'bower_components/bootstrap/dist/css',

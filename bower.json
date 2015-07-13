@@ -7,9 +7,6 @@
     "bootstrap": "~3.2.0",
     "heartcode-canvasloader": "https://raw.githubusercontent.com/heartcode/CanvasLoader/master/js/heartcode-canvasloader.js",
     "font-awesome": "~4.3.0",
-    "TweenJS": "~0.6.1",
-    "EaselJS": "~0.8.1",
-    "PreloadJS": "~0.6.1",
     "modernizr": "~2.8.3",
     "devicon": "*",
     "onepage-scroll": "~1.3.1"
