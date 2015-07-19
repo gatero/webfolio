@@ -1,0 +1,58 @@
+.translateY(@y) {
+  -webkit-transform: translateY(@y);
+     -moz-transform: translateY(@y);
+      -ms-transform: translateY(@y); // IE9 only
+       -o-transform: translateY(@y);
+          transform: translateY(@y);
+}
+.translateX(@x) {
+  -webkit-transform: translateX(@x);
+     -moz-transform: translateX(@x);
+      -ms-transform: translateX(@x); // IE9 only
+       -o-transform: translateX(@x);
+          transform: translateX(@x);
+}
+
+.translate-rotate(@x; @y; @deg){
+  -webkit-transform: translate(@x, @y) rotate(@deg);
+     -moz-transform: translate(@x, @y) rotate(@deg);
+      -ms-transform: translate(@x, @y) rotate(@deg);
+       -o-transform: translate(@x, @y) rotate(@deg);
+          transform: translate(@x, @y) rotate(@deg);
+}
+.translateY-rotate(@y; @deg){
+  -webkit-transform: translateY(@y) rotate(@deg);
+     -moz-transform: translateY(@y) rotate(@deg);
+      -ms-transform: translateY(@y) rotate(@deg);
+       -o-transform: translateY(@y) rotate(@deg);
+          transform: translateY(@y) rotate(@deg);
+}
+.translateX-rotate(@x; @deg){
+  -webkit-transform: translateX(@x) rotate(@deg);
+     -moz-transform: translateX(@x) rotate(@deg);
+      -ms-transform: translateX(@x) rotate(@deg);
+       -o-transform: translateX(@x) rotate(@deg);
+          transform: translateX(@x) rotate(@deg);
+}
+
+.scale-rotate(@scale, @rotate){
+  -webkit-transform: scale(@scale) rotate(@rotate);
+     -moz-transform: scale(@scale) rotate(@rotate);
+      -ms-transform: scale(@scale) rotate(@rotate);
+       -o-transform: scale(@scale) rotate(@rotate);
+          transform: scale(@scale) rotate(@rotate);
+}
+.scale-only(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio); // IE9 only
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+// Border radius
+.border-radius(@radius:5px){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
+}
