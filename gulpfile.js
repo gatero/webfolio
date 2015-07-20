@@ -149,12 +149,18 @@ gulp.task('watch', ['coffee','styles','images','jade', 'bower'], function() {
   gulp.watch(config.app+'/**/*.jade', ['jade']);
   gulp.watch('bower.json', ['bower']);
   gulp.start('browser-sync');
+  gulp
+    .src(config.app+'/fonts/**/*')
+    .pipe(gulp.dest(config.tmp+'/fonts'));
 });
 
 gulp.task('build', ['usemin'], function(){
   gulp
     .src(config.tmp+'/images/**/*')
     .pipe(gulp.dest(config.dist+'/images'));
+  gulp
+    .src(config.tmp+'/fonts/**/*')
+    .pipe(gulp.dest(config.dist+'/fonts'));
 });
 
 gulp.task('default', ['clean'], function() {
