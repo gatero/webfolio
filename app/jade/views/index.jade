@@ -1,16 +1,23 @@
 //- index.jade
 extends ../template.jade
 block title
-  title gulp + jade + less + coffee
+  title Daniel Ortega
 
 block content
   .container-fluid
     section.row.home
-      article.col-lg-12
-        figure
+      div.col-lg-12
+        header
           h1.text-center.site-title Daniel Ortega
-        img.author-photo.img-circle.center(src="http://placehold.it/350x350", alt="Author picture")
-      .col-lg-12
+          h6.text-center Diseño y desarrollo web
+
+      div.col-lg-6
+        figure
+          img.author-photo.img-circle.center(src="http://placehold.it/350x350", alt="Author picture")
+
+      div.col-lg-6
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique molestias eum, animi quaerat iure porro dolores cumque molestiae excepturi aperiam illum perspiciatis minima aliquam eos minus officia quibusdam nam.
+      .col-lg-12.navbar-container
         +navbar
     section.row.about-me
       block about_me
@@ -270,4 +277,3 @@ block content
                 button.btn.btn-primary.pull-right(type='submit')
                   |&nbsp;Enviar
                   i.fa.fa-fw.fa-caret-square-o-right
-
